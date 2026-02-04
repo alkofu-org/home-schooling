@@ -1,0 +1,13 @@
+{
+  "name": "home-schooling",
+  "version": "1.0.0",
+  "description": "My test project to create a home schooling application",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": ["home-schooling"],
+  "author": "alkofu",
+  "license": "MIT",
+  "packageManager": "pnpm@10.28.2"
+}
