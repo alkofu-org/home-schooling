@@ -1,0 +1,16 @@
+# custom ignores
+dist
+
+### macOS ###
+# General
+.DS_Store
+.AppleDouble
+.LSOverride
+
+### Node ###
+# Logs
+logs
+*.log
+
+# dotenv environment variables file
+.env
