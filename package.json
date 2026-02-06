@@ -9,6 +9,7 @@
   "author": "alkofu",
   "type": "module",
   "scripts": {
+    "build": "tsc",
     "fmt": "oxfmt",
     "fmt:check": "oxfmt --check",
     "lint": "oxlint",
@@ -20,8 +21,11 @@
     "@commitlint/cli": "^20.4.1",
     "@commitlint/config-conventional": "^20.4.1",
     "@commitlint/types": "^20.4.0",
+    "@tsconfig/node24": "^24.0.4",
+    "@types/node": "~24.10.11",
     "oxfmt": "^0.28.0",
-    "oxlint": "^1.43.0"
+    "oxlint": "^1.43.0",
+    "typescript": "^5.9.3"
   },
   "packageManager": "pnpm@10.28.2"
 }
