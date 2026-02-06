@@ -7,7 +7,7 @@
   ],
   "license": "MIT",
   "author": "alkofu",
-  "main": "index.js",
+  "type": "module",
   "scripts": {
     "fmt": "oxfmt",
     "fmt:check": "oxfmt --check",
@@ -17,6 +17,9 @@
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "devDependencies": {
+    "@commitlint/cli": "^20.4.1",
+    "@commitlint/config-conventional": "^20.4.1",
+    "@commitlint/types": "^20.4.0",
     "oxfmt": "^0.28.0",
     "oxlint": "^1.43.0"
   },

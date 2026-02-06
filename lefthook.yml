@@ -1,0 +1,14 @@
+pre-commit:
+  parallel: true
+  commands:
+    lint:
+      run: pnpm run lint
+      glob: "*.{js,ts,jsx,tsx}"
+
+    format:
+      run: pnpm run fmt
+
+commit-msg:
+  commands:
+    lint-commit-message:
+      run: npx commitlint --edit {1}
