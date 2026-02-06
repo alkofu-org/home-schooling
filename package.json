@@ -2,12 +2,23 @@
   "name": "home-schooling",
   "version": "1.0.0",
   "description": "My test project to create a home schooling application",
+  "keywords": [
+    "home-schooling"
+  ],
+  "license": "MIT",
+  "author": "alkofu",
   "main": "index.js",
   "scripts": {
+    "fmt": "oxfmt",
+    "fmt:check": "oxfmt --check",
+    "lint": "oxlint",
+    "lint:fix": "oxlint --fix",
+    "lint:github": "oxlint --format=github",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "keywords": ["home-schooling"],
-  "author": "alkofu",
-  "license": "MIT",
+  "devDependencies": {
+    "oxfmt": "^0.28.0",
+    "oxlint": "^1.43.0"
+  },
   "packageManager": "pnpm@10.28.2"
 }
