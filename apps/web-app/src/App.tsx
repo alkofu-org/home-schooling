@@ -1,36 +1,27 @@
-import { AppShell, Burger, Group, MantineProvider, Text } from "@mantine/core";
-import { useDisclosure } from "@mantine/hooks";
-import "@mantine/core/styles.css";
+import { useAuth } from "react-oidc-context";
+import Home from "./pages/Home";
 
 export default function App() {
-  const [opened, { toggle }] = useDisclosure();
+  const auth = useAuth();
 
-  return (
-    <MantineProvider>
-      <AppShell
-        header={{ height: 60 }}
-        navbar={{
-          width: 300,
-          breakpoint: "sm",
-          collapsed: { mobile: !opened },
-        }}
-        padding="md"
-      >
-        <AppShell.Header>
-          <Group h="100%" px="md">
-            <Burger opened={opened} onClick={toggle} hiddenFrom="sm" size="sm" />
-            Header has a burger icon below sm breakpoint
-          </Group>
-        </AppShell.Header>
-        <AppShell.Navbar p="md">
-          Navbar is collapsed on mobile at sm breakpoint. At that point it is no longer offset by
-          padding in the main element and it takes the full width of the screen when opened.
-        </AppShell.Navbar>
-        <AppShell.Main>
-          <Text>This is the main section, your app content here.</Text>
-          <Text>Layout used in most cases – Navbar and Header with fixed position</Text>
-        </AppShell.Main>
-      </AppShell>
-    </MantineProvider>
-  );
+  switch (auth.activeNavigator) {
+    case "signinSilent":
+      return <div>Signing in silently...</div>;
+    case "signoutRedirect":
+      return <div>Signing out...</div>;
+  }
+
+  if (auth.isLoading) {
+    return <div>Loading...</div>;
+  }
+
+  if (auth.error) {
+    return <div>Oops, an error occurred: {auth.error.message}</div>;
+  }
+
+  if (auth.isAuthenticated) {
+    return <Home />;
+  }
+
+  return <button onClick={() => auth.signinRedirect()}>Log in</button>;
 }
