@@ -1,5 +1,6 @@
 import { useAuth } from "react-oidc-context";
 import Home from "./pages/Home";
+import Welcome from "./pages/Welcome";
 
 export default function App() {
   const auth = useAuth();
@@ -23,5 +24,5 @@ export default function App() {
     return <Home />;
   }
 
-  return <button onClick={() => auth.signinRedirect()}>Log in</button>;
+  return <Welcome />;
 }

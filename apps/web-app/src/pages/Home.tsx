@@ -1,4 +1,4 @@
-import { AppShell, Burger, Group, Text } from "@mantine/core";
+import { AppShell, Burger, Button, Group, Text } from "@mantine/core";
 import { useDisclosure } from "@mantine/hooks";
 import { useAuth } from "react-oidc-context";
 import "@mantine/core/styles.css";
@@ -18,10 +18,10 @@ export default function Home() {
       padding="md"
     >
       <AppShell.Header>
-        <Group h="100%" px="md">
+        <Group h="100%" px="md" justify="space-between" align="center">
           <Burger opened={opened} onClick={toggle} hiddenFrom="sm" size="sm" />
           Header has a burger icon below sm breakpoint
-          <button onClick={() => void auth.removeUser()}>Log out</button>
+          <Button onClick={() => void auth.removeUser()}>Log out</Button>
         </Group>
       </AppShell.Header>
       <AppShell.Navbar p="md">
