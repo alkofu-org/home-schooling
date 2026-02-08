@@ -11,8 +11,10 @@
   "dependencies": {
     "@mantine/core": "^8.3.14",
     "@mantine/hooks": "^8.3.14",
+    "oidc-client-ts": "^3.4.1",
     "react": "^19.2.0",
-    "react-dom": "^19.2.0"
+    "react-dom": "^19.2.0",
+    "react-oidc-context": "^3.3.0"
   },
   "devDependencies": {
     "@types/react": "^19.2.5",
