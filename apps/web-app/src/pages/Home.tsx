@@ -1,10 +1,10 @@
-import { AppShell, Burger, Button, Group, Text } from "@mantine/core";
+import { AppShell, Text } from "@mantine/core";
 import { useDisclosure } from "@mantine/hooks";
-import { useAuth } from "react-oidc-context";
 import "@mantine/core/styles.css";
+import NavBar from "../components/NavBar";
+import Header from "../components/Header";
 
 export default function Home() {
-  const auth = useAuth();
   const [opened, { toggle }] = useDisclosure();
 
   return (
@@ -18,15 +18,10 @@ export default function Home() {
       padding="md"
     >
       <AppShell.Header>
-        <Group h="100%" px="md" justify="space-between" align="center">
-          <Burger opened={opened} onClick={toggle} hiddenFrom="sm" size="sm" />
-          Header has a burger icon below sm breakpoint
-          <Button onClick={() => void auth.removeUser()}>Log out</Button>
-        </Group>
+        <Header opened={opened} toggle={toggle} />
       </AppShell.Header>
       <AppShell.Navbar p="md">
-        Navbar is collapsed on mobile at sm breakpoint. At that point it is no longer offset by
-        padding in the main element and it takes the full width of the screen when opened.
+        <NavBar />
       </AppShell.Navbar>
       <AppShell.Main>
         <Text>This is the main section, your app content here.</Text>
